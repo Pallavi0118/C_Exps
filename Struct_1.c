@@ -488,4 +488,25 @@ int main(void){
 		ptr++;
 	}
 }
+#elif d == 24
+typedef struct s_1
+{
+	int *ptr1;
+	char *ptr2;
+	int val;	
+}S_1;
+
+int main(void)
+{
+	int val1 = 10;
+	char *val2 = "qwertyuio";
+	S_1 ins1;
+	ins1.ptr1 = &val1;
+	printf("Val = %d\n",*(ins1.ptr1));
+	S_1 *ins2;
+	ins2 = &ins1;
+	ins2->ptr1 = &val1;
+	printf("Val = %d\n",*(ins2->ptr1));
+	return 0;
+}
 #endif
