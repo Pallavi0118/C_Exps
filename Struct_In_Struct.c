@@ -150,5 +150,25 @@ int main(void){
 	printf("%d\t%d\t%d\t%d\n", *(ex->b), *(ex->in_st_t.d), *(ex->in_st_t.in_in_str_t1.f), *(exp->in_st_t->in_in_str_t2.h));
 }
 
-#elif z==11
+#elif m==11
+struct details{
+	int a;
+	char b;
+	int c;
+};
+
+typedef struct struct_s{
+	int a;
+	int *b;
+	struct details;
+	int c;
+}struct_t;
+
+int main(void){
+	struct_t exp;
+	exp.a = 10;
+	exp.b = &exp.a;
+	exp.details.a = 20;
+	printf("%d\n", exp.details.a);
+}
 #endif
